@@ -1,0 +1,980 @@
+{
+	"info": {
+		"_postman_id": "88f6f0cc-8671-46bb-8ee8-26f661e28f15",
+		"name": "Mini RPG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30823216"
+	},
+	"item": [
+		{
+			"name": "Game",
+			"item": [
+				{
+					"name": "Play",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/game/play",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"game",
+								"play"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Play",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/game/play",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"game",
+										"play"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "162"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a2-cPgZYFaKskTqME06pgezv0mSXxM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 16:02:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Game played successfully\",\n    \"data\": {\n        \"score\": 68,\n        \"coinReward\": 10,\n        \"expReward\": 20,\n        \"newCoins\": 85,\n        \"newExp\": 70,\n        \"newLevel\": 22,\n        \"totalScore\": 5724\n    }\n}"
+						},
+						{
+							"name": "Play",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/game/play",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"game",
+										"play"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "162"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a2-cPgZYFaKskTqME06pgezv0mSXxM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 16:02:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Game played successfully\",\n    \"data\": {\n        \"score\": 68,\n        \"coinReward\": 10,\n        \"expReward\": 20,\n        \"newCoins\": 85,\n        \"newExp\": 70,\n        \"newLevel\": 22,\n        \"totalScore\": 5724\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Leaderboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/game/leaderboard",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"game",
+								"leaderboard"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/game/leaderboard",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"game",
+										"leaderboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "178"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b2-1ncGneRBNfazr7pd2cqgXevBi9c\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 15:19:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"playerId\": 2,\n            \"username\": \"Jane Doe\",\n            \"level\": 22,\n            \"coins\": 1065,\n            \"totalScore\": 5595\n        },\n        {\n            \"playerId\": 1,\n            \"username\": \"John Doe\",\n            \"level\": 1,\n            \"coins\": 10,\n            \"totalScore\": 48\n        }\n    ]\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/game/leaderboard",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"game",
+										"leaderboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "178"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b2-1ncGneRBNfazr7pd2cqgXevBi9c\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 15:19:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"playerId\": 2,\n            \"username\": \"Jane Doe\",\n            \"level\": 22,\n            \"coins\": 1065,\n            \"totalScore\": 5595\n        },\n        {\n            \"playerId\": 1,\n            \"username\": \"John Doe\",\n            \"level\": 1,\n            \"coins\": 10,\n            \"totalScore\": 48\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Jane Doe\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Jane Doe\",\n    \"password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/auth/register",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-vbmKA7PCc/w9YUfR6e9saX6F5o0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 16:29:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Player registered successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseData = pm.response.json();",
+									"const tokenValue = responseData.token;",
+									"pm.environment.set('authToken', tokenValue);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Jane Doe\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"Jane Doe\",\n    \"password\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/auth/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "231"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e7-HEmQObtvYVm4kRafsszdARbue6Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 17:05:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJZCI6MSwidXNlcm5hbWUiOiJKYW5lIERvZSIsImlhdCI6MTc1NzY5NjcwNCwiZXhwIjoxNzU3NzAwMzA0fQ.xJtDvUqqf_qAFnserkO8TRSUSHiRiXh-HMMKN3Al5iQ\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Player",
+			"item": [
+				{
+					"name": "Statistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/player/statistics",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"player",
+								"statistics"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Statistics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/player/statistics",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"player",
+										"statistics"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "158"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9e-SCDfvfxn5CNv9fMa1GVKJ6p82Dg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 16:02:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"username\": \"Jane Doe\",\n        \"coins\": 85,\n        \"exp\": 70,\n        \"level\": 22,\n        \"createdAt\": \"2025-09-12T14:31:07.038Z\",\n        \"attackPower\": 50,\n        \"defensePower\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Inventory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/player/inventory",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"player",
+								"inventory"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inventory",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/player/inventory",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"player",
+										"inventory"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b8-noEMcIEnmCmk6G7SAapcAI62szQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 16:02:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"quantity\": 1,\n            \"item\": {\n                \"id\": 1,\n                \"name\": \"Sword of Light\",\n                \"type\": \"weapon\",\n                \"rarity\": \"epic\",\n                \"levelRequired\": 5,\n                \"attackPower\": 50,\n                \"defensePower\": 0,\n                \"price\": 1000\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Equip-item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/player/equip-item",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"player",
+								"equip-item"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Equip-item",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"itemId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/player/equip-item",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"player",
+										"equip-item"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6d-VX6a8oy4tAbk6EiD7FzzowVLiMY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 16:02:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Equipped Sword of Light successfully!\",\n    \"data\": {\n        \"attackPower\": 50,\n        \"defensePower\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Shop",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/shop/list",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"shop",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/shop/list",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"shop",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2144"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"860-PewiWWagOWgb3ys2jzTNS0Xw1d0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 16:29:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Sword of Light\",\n            \"type\": \"weapon\",\n            \"rarity\": \"epic\",\n            \"levelRequired\": 5,\n            \"attackPower\": 50,\n            \"defensePower\": 0,\n            \"price\": 1000\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Iron Sword\",\n            \"type\": \"weapon\",\n            \"rarity\": \"common\",\n            \"levelRequired\": 1,\n            \"attackPower\": 10,\n            \"defensePower\": 0,\n            \"price\": 100\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Dragon Slayer\",\n            \"type\": \"weapon\",\n            \"rarity\": \"legendary\",\n            \"levelRequired\": 10,\n            \"attackPower\": 120,\n            \"defensePower\": 0,\n            \"price\": 5000\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Steel Dagger\",\n            \"type\": \"weapon\",\n            \"rarity\": \"rare\",\n            \"levelRequired\": 3,\n            \"attackPower\": 25,\n            \"defensePower\": 0,\n            \"price\": 400\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Iron Armor\",\n            \"type\": \"armor\",\n            \"rarity\": \"rare\",\n            \"levelRequired\": 3,\n            \"attackPower\": 0,\n            \"defensePower\": 30,\n            \"price\": 500\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Leather Armor\",\n            \"type\": \"armor\",\n            \"rarity\": \"common\",\n            \"levelRequired\": 1,\n            \"attackPower\": 0,\n            \"defensePower\": 10,\n            \"price\": 150\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Dragon Scale Armor\",\n            \"type\": \"armor\",\n            \"rarity\": \"legendary\",\n            \"levelRequired\": 10,\n            \"attackPower\": 0,\n            \"defensePower\": 100,\n            \"price\": 6000\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Steel Chestplate\",\n            \"type\": \"armor\",\n            \"rarity\": \"epic\",\n            \"levelRequired\": 5,\n            \"attackPower\": 0,\n            \"defensePower\": 50,\n            \"price\": 1200\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Ring of Power\",\n            \"type\": \"accessory\",\n            \"rarity\": \"epic\",\n            \"levelRequired\": 5,\n            \"attackPower\": 15,\n            \"defensePower\": 10,\n            \"price\": 800\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Amulet of Health\",\n            \"type\": \"accessory\",\n            \"rarity\": \"rare\",\n            \"levelRequired\": 3,\n            \"attackPower\": 5,\n            \"defensePower\": 15,\n            \"price\": 400\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Cursed Necklace\",\n            \"type\": \"accessory\",\n            \"rarity\": \"legendary\",\n            \"levelRequired\": 8,\n            \"attackPower\": 25,\n            \"defensePower\": 25,\n            \"price\": 3000\n        },\n        {\n            \"id\": 12,\n            \"name\": \"Silver Ring\",\n            \"type\": \"accessory\",\n            \"rarity\": \"common\",\n            \"levelRequired\": 1,\n            \"attackPower\": 2,\n            \"defensePower\": 2,\n            \"price\": 50\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Health Potion\",\n            \"type\": \"potion\",\n            \"rarity\": \"common\",\n            \"levelRequired\": 1,\n            \"attackPower\": 0,\n            \"defensePower\": 0,\n            \"price\": 30\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Mana Potion\",\n            \"type\": \"potion\",\n            \"rarity\": \"common\",\n            \"levelRequired\": 1,\n            \"attackPower\": 0,\n            \"defensePower\": 0,\n            \"price\": 35\n        },\n        {\n            \"id\": 15,\n            \"name\": \"Elixir of Strength\",\n            \"type\": \"potion\",\n            \"rarity\": \"rare\",\n            \"levelRequired\": 4,\n            \"attackPower\": 10,\n            \"defensePower\": 5,\n            \"price\": 250\n        },\n        {\n            \"id\": 16,\n            \"name\": \"Potion of Invincibility\",\n            \"type\": \"potion\",\n            \"rarity\": \"legendary\",\n            \"levelRequired\": 10,\n            \"attackPower\": 50,\n            \"defensePower\": 50,\n            \"price\": 5000\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Buy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemId\": 1,\n    \"quantity\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/shop/buy",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"shop",
+								"buy"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Buy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"itemId\": 1,\n    \"quantity\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/shop/buy",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"shop",
+										"buy"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-am6oZRsO6HDN39tLrrbUT0kiDM8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 16:02:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Item purchased successfully\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:3000",
+			"type": "default"
+		},
+		{
+			"key": "bearer_token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJZCI6MiwidXNlcm5hbWUiOiJKYW5lIERvZSIsImlhdCI6MTc1NzY4NzUxMCwiZXhwIjoxNzU3NjkxMTEwfQ.L75DTH2wE-CqWNzre7xt9cPj7eLO2f29WUyS00eHIfo",
+			"type": "string"
+		}
+	]
+}
