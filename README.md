@@ -40,7 +40,7 @@ npm run prisma:seed
 ![Screenshot](./assets/collection_step_3.png)
 ![Screenshot](./assets/collection_step_4.png)
 
-#### 2. Import environtment
+#### 2. Import environment
 
 ![Screenshot](./assets/environment_step_1.png)
 ![Screenshot](./assets/environment_step_2.png)
