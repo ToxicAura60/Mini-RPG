@@ -33,6 +33,12 @@ npm run prisma:seed
 
 ## Import Postman Collection and Environment
 
+- The collection file is located in the `postman` folder:  
+  `postman/collection.json`
+- The environment file is also in the `postman` folder:  
+  `postman/environment.json`
+
+
 #### 1. Import collection
 
 ![Screenshot](./assets/collection_step_1.png)
