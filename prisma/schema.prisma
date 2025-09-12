@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Player {
+  id                Int               @id @default(autoincrement())
+  username          String            @unique
+  password          String
+  coins             Int               @default(0)
+  exp               Int               @default(0)
+  level             Int               @default(1)  
+  attackPower       Int               @default(0)
+  defensePower      Int               @default(0)
+  createdAt         DateTime          @default(now())
+  inventories       PlayerInventory[]
+  gameHistories     GameHistory[]
+}
+
+enum ItemType {
+  weapon
+  armor
+  accessory
+  potion
+}
+
+enum Rarity {
+  common
+  rare
+  epic
+  legendary
+}
+
+model Item {
+  id            Int               @id @default(autoincrement())
+  name          String            @unique
+  type          ItemType
+  rarity        Rarity
+  levelRequired Int
+  attackPower   Int
+  defensePower  Int
+  price         Int
+  createdAt     DateTime          @default(now())
+  inventories   PlayerInventory[]
+}
+
+model PlayerInventory {
+  id         Int      @id @default(autoincrement())
+  player     Player   @relation(fields: [playerId], references: [id])
+  playerId   Int
+  item       Item     @relation(fields: [itemId], references: [id])
+  itemId     Int
+  quantity   Int      @default(1)
+  createdAt  DateTime @default(now())
+
+  @@unique([playerId, itemId])
+}
+
+model GameHistory {
+  id         Int      @id @default(autoincrement())
+  player     Player   @relation(fields: [playerId], references: [id])
+  playerId   Int
+  score      Int
+  coinReward Int
+  expReward  Int
+  playedAt   DateTime @default(now())
+  createdAt  DateTime @default(now())
+}
+
