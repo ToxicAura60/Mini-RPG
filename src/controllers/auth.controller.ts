@@ -31,7 +31,7 @@ export const register = async (req: Request, res: Response) => {
   } catch(err) {
     return res.status(500).json({
       success: false,
-      errors: [{ field: null, message: "Failed to hash password. Please try again later." }],
+      errors: [{ field: null, message: "Failed to hash password." }],
     });
   }
 

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "88f6f0cc-8671-46bb-8ee8-26f661e28f15",
+		"_postman_id": "24dca3b2-eafd-46e2-aad9-64d771ee66db",
 		"name": "Mini RPG",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30823216"
@@ -105,67 +105,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": true,\n    \"message\": \"Game played successfully\",\n    \"data\": {\n        \"score\": 68,\n        \"coinReward\": 10,\n        \"expReward\": 20,\n        \"newCoins\": 85,\n        \"newExp\": 70,\n        \"newLevel\": 22,\n        \"totalScore\": 5724\n    }\n}"
-						},
-						{
-							"name": "Play",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseURL}}/game/play",
-									"host": [
-										"{{baseURL}}"
-									],
-									"path": [
-										"game",
-										"play"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "162"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"a2-cPgZYFaKskTqME06pgezv0mSXxM\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 12 Sep 2025 16:02:33 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Game played successfully\",\n    \"data\": {\n        \"score\": 68,\n        \"coinReward\": 10,\n        \"expReward\": 20,\n        \"newCoins\": 85,\n        \"newExp\": 70,\n        \"newLevel\": 22,\n        \"totalScore\": 5724\n    }\n}"
 						}
 					]
 				},
@@ -187,59 +126,7 @@
 					},
 					"response": [
 						{
-							"name": "New Request",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseURL}}/game/leaderboard",
-									"host": [
-										"{{baseURL}}"
-									],
-									"path": [
-										"game",
-										"leaderboard"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "178"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"b2-1ncGneRBNfazr7pd2cqgXevBi9c\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 12 Sep 2025 15:19:27 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"playerId\": 2,\n            \"username\": \"Jane Doe\",\n            \"level\": 22,\n            \"coins\": 1065,\n            \"totalScore\": 5595\n        },\n        {\n            \"playerId\": 1,\n            \"username\": \"John Doe\",\n            \"level\": 1,\n            \"coins\": 10,\n            \"totalScore\": 48\n        }\n    ]\n}"
-						},
-						{
-							"name": "New Request",
+							"name": "Leaderboard",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -788,7 +675,7 @@
 					},
 					"response": [
 						{
-							"name": "New Request",
+							"name": "List",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -937,6 +824,166 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": true,\n    \"message\": \"Item purchased successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Calculate-price",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemId\": 4,\n    \"quantity\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/shop/calculate-price",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"shop",
+								"calculate-price"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Calculate-price",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"itemId\": 1,\n    \"quantity\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/shop/calculate-price",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"shop",
+										"calculate-price"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-eC9gyhIBxrGHnz+GKOHs40v2pWk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 20:03:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"totalPrice\": 13000\n    }\n}"
+						},
+						{
+							"name": "Calculate-price",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"itemId\": 4,\n    \"quantity\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/shop/calculate-price",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"shop",
+										"calculate-price"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-Q7m0Tu/qGrXfAgV6130OlMLSgtQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Sep 2025 20:08:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"totalPrice\": 1200\n    }\n}"
 						}
 					]
 				}

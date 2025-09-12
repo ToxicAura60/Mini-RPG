@@ -9,17 +9,17 @@ export const buyItem = async (req: AuthenticatedRequest, res: Response) => {
   const player = req.player!;
 
   const rarityLimit = {
-    common: 10,
-    rare: 5,
-    epic: 3,
-    legendary: 1,
+    common: parseInt(process.env.RARITY_LIMIT_COMMON ?? "10"),
+    rare: parseInt(process.env.RARITY_LIMIT_RARE ?? "5"),
+    epic: parseInt(process.env.RARITY_LIMIT_EPIC ?? "3"),
+    legendary: parseInt(process.env.RARITY_LIMIT_LEGENDARY ?? "1"),
   };
 
   const rarityMultiplier = {
-    common: 1,
-    rare: 2,
-    epic: 3,
-    legendary: 5,
+    common: parseInt(process.env.RARITY_MULTIPLIER_COMMON ?? "1"),
+    rare: parseInt(process.env.RARITY_MULTIPLIER_RARE ?? "2"),
+    epic: parseInt(process.env.RARITY_MULTIPLIER_EPIC ?? "3"),
+    legendary: parseInt(process.env.RARITY_MULTIPLIER_LEGENDARY ?? "5"),
   };
 
   let item;
@@ -139,3 +139,64 @@ export const getItems = async (req: Request, res: Response) => {
     data: items,
   });
 };
+
+export const calculatePrice = async (req: AuthenticatedRequest, res: Response) => {
+  const player = req.player!;
+
+  const { itemId, quantity } = req.body;
+
+  const rarityMultiplier = {
+    common: parseInt(process.env.RARITY_MULTIPLIER_COMMON ?? "1"),
+    rare: parseInt(process.env.RARITY_MULTIPLIER_RARE ?? "2"),
+    epic: parseInt(process.env.RARITY_MULTIPLIER_EPIC ?? "3"),
+    legendary: parseInt(process.env.RARITY_MULTIPLIER_LEGENDARY ?? "5")
+  };
+
+  let item;
+  try {
+    item = await prisma.item.findUnique({ where: { id: itemId } });
+  } catch(err) {
+    return res.status(500).json({
+      success: false,
+      errors: [{ field: null, message: "Failed to retrieve item from database."}],
+    });
+  }
+
+  if (!item) {
+    return res.status(404).json({ 
+      success: false, 
+      errors: [{ field: "itemId", message: "Item not found" }]
+    });
+  };
+
+  let totalSameRarity;
+  try {
+    totalSameRarity = await prisma.playerInventory.aggregate({
+      where: {
+        playerId: player.id,
+        item: { rarity: item.rarity },
+      },
+      _sum: { quantity: true },
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      errors: [{ field: null, message: "Failed to calculate total items of this rarity."}],
+    });
+  }
+  const currentRarityQuantity = totalSameRarity._sum.quantity ?? 0;
+
+  const multiplier = rarityMultiplier[item.rarity];
+  
+  let totalPrice = 0;
+  for(let i = currentRarityQuantity; i <= currentRarityQuantity + quantity - 1; i++) {
+      totalPrice += item.price * Math.pow(multiplier, i);
+  }
+
+  return res.status(200).json({ 
+    success: true, 
+    data: {
+      totalPrice: totalPrice
+    }
+  });
+}
