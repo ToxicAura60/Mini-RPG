@@ -31,6 +31,12 @@ npx prisma migrate dev --name init
 npm run prisma:seed
 ```
 
+6. Run the code
+
+```bash
+npm run dev
+```
+
 ## Import Postman Collection and Environment
 
 - The collection file is located in the `postman` folder:  

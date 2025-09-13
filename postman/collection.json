@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "24dca3b2-eafd-46e2-aad9-64d771ee66db",
+		"_postman_id": "0a025898-56f3-4432-b02a-0ae53ab0b1d9",
 		"name": "Mini RPG",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30823216"
@@ -88,11 +88,11 @@
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"a2-cPgZYFaKskTqME06pgezv0mSXxM\""
+									"value": "W/\"a2-0KX34kgldl+J1A4QTa0UDzLbMsI\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Sep 2025 16:02:33 GMT"
+									"value": "Sat, 13 Sep 2025 06:19:11 GMT"
 								},
 								{
 									"key": "Connection",
@@ -104,7 +104,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Game played successfully\",\n    \"data\": {\n        \"score\": 68,\n        \"coinReward\": 10,\n        \"expReward\": 20,\n        \"newCoins\": 85,\n        \"newExp\": 70,\n        \"newLevel\": 22,\n        \"totalScore\": 5724\n    }\n}"
+							"body": "{\n    \"success\": true,\n    \"message\": \"Game played successfully\",\n    \"data\": {\n        \"score\": 63,\n        \"coinReward\": 10,\n        \"expReward\": 20,\n        \"newCoins\": 275,\n        \"newExp\": 50,\n        \"newLevel\": 8,\n        \"totalScore\": 1961\n    }\n}"
 						}
 					]
 				},
@@ -159,11 +159,11 @@
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"b2-1ncGneRBNfazr7pd2cqgXevBi9c\""
+									"value": "W/\"b2-6R4XR2LRUEb02lVlLvBlFRHTA4k\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Sep 2025 15:19:27 GMT"
+									"value": "Sat, 13 Sep 2025 06:21:57 GMT"
 								},
 								{
 									"key": "Connection",
@@ -175,7 +175,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"playerId\": 2,\n            \"username\": \"Jane Doe\",\n            \"level\": 22,\n            \"coins\": 1065,\n            \"totalScore\": 5595\n        },\n        {\n            \"playerId\": 1,\n            \"username\": \"John Doe\",\n            \"level\": 1,\n            \"coins\": 10,\n            \"totalScore\": 48\n        }\n    ]\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"playerId\": 1,\n            \"username\": \"Jane Doe\",\n            \"level\": 38,\n            \"coins\": 55,\n            \"totalScore\": 9651\n        },\n        {\n            \"playerId\": 2,\n            \"username\": \"John Doe\",\n            \"level\": 8,\n            \"coins\": 75,\n            \"totalScore\": 1961\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -191,7 +191,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"Jane Doe\",\n    \"password\": \"12345678\"\n}",
+							"raw": "{\n    \"username\": \"John Doe\",\n    \"password\": \"12345678\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -217,7 +217,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\": \"Jane Doe\",\n    \"password\": \"12345678\"\n}",
+									"raw": "{\n    \"username\": \"John Doe\",\n    \"password\": \"12345678\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -257,7 +257,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Sep 2025 16:29:23 GMT"
+									"value": "Sat, 13 Sep 2025 06:15:38 GMT"
 								},
 								{
 									"key": "Connection",
@@ -304,7 +304,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"Jane Doe\",\n    \"password\": \"12345678\"\n}",
+							"raw": "{\n    \"username\": \"John Doe\",\n    \"password\": \"12345678\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -330,7 +330,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"username\": \"Jane Doe\",\n    \"password\": \"12345678\"\n}",
+									"raw": "{\n    \"username\": \"John Doe\",\n    \"password\": \"12345678\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -366,11 +366,11 @@
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"e7-HEmQObtvYVm4kRafsszdARbue6Q\""
+									"value": "W/\"e7-0as4cyAGxPpyKGkjU6I/ti3QMtk\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Sep 2025 17:05:04 GMT"
+									"value": "Sat, 13 Sep 2025 06:16:13 GMT"
 								},
 								{
 									"key": "Connection",
@@ -382,7 +382,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJZCI6MSwidXNlcm5hbWUiOiJKYW5lIERvZSIsImlhdCI6MTc1NzY5NjcwNCwiZXhwIjoxNzU3NzAwMzA0fQ.xJtDvUqqf_qAFnserkO8TRSUSHiRiXh-HMMKN3Al5iQ\"\n}"
+							"body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5ZXJJZCI6MiwidXNlcm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTc1Nzc0NDE3MywiZXhwIjoxNzU3NzQ3NzczfQ.4vwxOEotBQHsAzt2lCYwk75MvqWJuf4S36zaRnEsTzA\"\n}"
 						}
 					]
 				}
@@ -448,15 +448,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "158"
+									"value": "157"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"9e-SCDfvfxn5CNv9fMa1GVKJ6p82Dg\""
+									"value": "W/\"9d-smr32xC8VD5nLscxFJBrLZxLeiM\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Sep 2025 16:02:36 GMT"
+									"value": "Sat, 13 Sep 2025 06:20:28 GMT"
 								},
 								{
 									"key": "Connection",
@@ -468,7 +468,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"username\": \"Jane Doe\",\n        \"coins\": 85,\n        \"exp\": 70,\n        \"level\": 22,\n        \"createdAt\": \"2025-09-12T14:31:07.038Z\",\n        \"attackPower\": 50,\n        \"defensePower\": 0\n    }\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"username\": \"John Doe\",\n        \"coins\": 75,\n        \"exp\": 50,\n        \"level\": 8,\n        \"createdAt\": \"2025-09-13T06:15:38.667Z\",\n        \"attackPower\": 10,\n        \"defensePower\": 0\n    }\n}"
 						}
 					]
 				},
@@ -529,15 +529,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "184"
+									"value": "182"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"b8-noEMcIEnmCmk6G7SAapcAI62szQ\""
+									"value": "W/\"b6-C27MISYDMfIPnDVGfQ1sr8+wQCQ\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Sep 2025 16:02:06 GMT"
+									"value": "Sat, 13 Sep 2025 06:19:57 GMT"
 								},
 								{
 									"key": "Connection",
@@ -549,7 +549,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"quantity\": 1,\n            \"item\": {\n                \"id\": 1,\n                \"name\": \"Sword of Light\",\n                \"type\": \"weapon\",\n                \"rarity\": \"epic\",\n                \"levelRequired\": 5,\n                \"attackPower\": 50,\n                \"defensePower\": 0,\n                \"price\": 1000\n            }\n        }\n    ]\n}"
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 18,\n            \"quantity\": 3,\n            \"item\": {\n                \"id\": 2,\n                \"name\": \"Iron Sword\",\n                \"type\": \"weapon\",\n                \"rarity\": \"common\",\n                \"levelRequired\": 1,\n                \"attackPower\": 10,\n                \"defensePower\": 0,\n                \"price\": 100\n            }\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -570,7 +570,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"itemId\": 1\n}",
+							"raw": "{\n    \"inventoryId\": 18\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -596,7 +596,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"itemId\": 1\n}",
+									"raw": "{\n    \"inventoryId\": 18\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -628,15 +628,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "109"
+									"value": "105"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"6d-VX6a8oy4tAbk6EiD7FzzowVLiMY\""
+									"value": "W/\"69-pWmNl7NIcp/BRFMZcyvkXUJw07I\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Sep 2025 16:02:14 GMT"
+									"value": "Sat, 13 Sep 2025 06:20:19 GMT"
 								},
 								{
 									"key": "Connection",
@@ -648,7 +648,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Equipped Sword of Light successfully!\",\n    \"data\": {\n        \"attackPower\": 50,\n        \"defensePower\": 0\n    }\n}"
+							"body": "{\n    \"success\": true,\n    \"message\": \"Equipped Iron Sword successfully!\",\n    \"data\": {\n        \"attackPower\": 10,\n        \"defensePower\": 0\n    }\n}"
 						}
 					]
 				}
@@ -712,7 +712,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Sep 2025 16:29:30 GMT"
+									"value": "Sat, 13 Sep 2025 06:21:01 GMT"
 								},
 								{
 									"key": "Connection",
@@ -745,7 +745,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"itemId\": 1,\n    \"quantity\": 1\n}",
+							"raw": "{\n    \"itemId\": 2,\n    \"quantity\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -771,7 +771,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"itemId\": 1,\n    \"quantity\": 1\n}",
+									"raw": "{\n    \"itemId\": 2,\n    \"quantity\": 2\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -811,7 +811,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Sep 2025 16:02:02 GMT"
+									"value": "Sat, 13 Sep 2025 06:19:41 GMT"
 								},
 								{
 									"key": "Connection",
@@ -870,67 +870,6 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"itemId\": 1,\n    \"quantity\": 3\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseURL}}/shop/calculate-price",
-									"host": [
-										"{{baseURL}}"
-									],
-									"path": [
-										"shop",
-										"calculate-price"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "44"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"2c-eC9gyhIBxrGHnz+GKOHs40v2pWk\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 12 Sep 2025 20:03:05 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"totalPrice\": 13000\n    }\n}"
-						},
-						{
-							"name": "Calculate-price",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
 									"raw": "{\n    \"itemId\": 4,\n    \"quantity\": 2\n}",
 									"options": {
 										"raw": {
@@ -971,7 +910,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Sep 2025 20:08:34 GMT"
+									"value": "Sat, 13 Sep 2025 06:20:41 GMT"
 								},
 								{
 									"key": "Connection",

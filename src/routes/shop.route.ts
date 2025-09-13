@@ -10,11 +10,11 @@ router.post(
   "/buy", 
   [
     body('itemId')
-      .notEmpty().withMessage("item ID is required").bail()
-      .isInt({ gt: 0 }).withMessage("Item ID must be a positive integer"),
+      .notEmpty().withMessage("itemId is required").bail()
+      .isInt({ gt: 0 }).withMessage("itemId must be a positive integer"),
     body("quantity")
       .notEmpty().withMessage("quantity is required").bail()
-      .isInt({min: 1}).withMessage("Quantity must be at least 1")
+      .isInt({min: 1}).withMessage("quantity must be at least 1")
   ],
   authenticateJWT,
   validate,
@@ -30,11 +30,11 @@ router.post(
   "/calculate-price", 
   [
     body('itemId')
-      .notEmpty().withMessage("item ID is required").bail()
-      .isInt({ gt: 0 }).withMessage("Item ID must be a positive integer"),
+      .notEmpty().withMessage("itemId is required").bail()
+      .isInt({ gt: 0 }).withMessage("itemId must be a positive integer"),
     body("quantity")
       .notEmpty().withMessage("quantity is required").bail()
-      .isInt({min: 1}).withMessage("Quantity must be at least 1")
+      .isInt({min: 1}).withMessage("quantity must be at least 1")
   ],
   authenticateJWT,
   validate,

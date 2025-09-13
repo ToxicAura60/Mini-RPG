@@ -8,8 +8,8 @@ const router = Router();
 router.post(
   "/register",
   [
-    body('username').notEmpty().withMessage("Username is required"),
-    body("password").isLength({ min: 8}).withMessage("Password must be at least 8 characters")
+    body('username').notEmpty().withMessage("username is required"),
+    body("password").isLength({ min: 8}).withMessage("password must be at least 8 characters")
   ],
   validate,
   register,
@@ -18,8 +18,8 @@ router.post(
 router.post(
   "/login",
   [
-    body('username').notEmpty().withMessage("Username is required"),
-    body("password").notEmpty().withMessage("Password is required")
+    body('username').notEmpty().withMessage("username is required"),
+    body("password").notEmpty().withMessage("password is required")
   ],
   validate,
   login,

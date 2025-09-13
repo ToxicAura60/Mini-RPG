@@ -2,6 +2,7 @@ import { Router } from "express";
 import { equipItem, getPlayerInventory, getPlayerStatistics } from "../controllers/player.controller.js";
 import { authenticateJWT } from "../middlewares/auth.middleware.js";
 import { body } from "express-validator";
+import { validate } from "../middlewares/validate.middleware.js";
 
 const router = Router();
 
@@ -21,11 +22,12 @@ router.get(
 router.post(
   "/equip-item", 
   [
-    body('itemId')
-      .notEmpty().withMessage("item ID is required").bail()
-      .isInt({ gt: 0 }).withMessage("Item ID must be a positive integer")
+    body('inventoryId')
+      .notEmpty().withMessage("inventoryId is required").bail()
+      .isInt({ gt: 0 }).withMessage("inventoryId must be a positive integer")
   ],
   authenticateJWT,
+  validate,
   equipItem
 );
 

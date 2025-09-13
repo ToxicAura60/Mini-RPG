@@ -49,12 +49,13 @@ export const getPlayerInventory = async (req: AuthenticatedRequest, res: Respons
 
 export const equipItem = async (req: AuthenticatedRequest, res: Response) => {
   const player = req.player!;
-  const { itemId } = req.body;
+  const { inventoryId } = req.body;
+
 
   let inventoryItem
   try {
     inventoryItem = await prisma.playerInventory.findUnique({
-      where: { playerId_itemId: { playerId: player.id, itemId } },
+      where: { id: inventoryId },
       include: { item: true },
     });
   } catch(err) {
@@ -64,10 +65,10 @@ export const equipItem = async (req: AuthenticatedRequest, res: Response) => {
     });
   }
 
-  if (!inventoryItem) {
+  if (!inventoryItem || inventoryItem.playerId !== player.id ||inventoryItem.quantity < 1) {
     return res.status(404).json({
       success: false,
-      errors: [{ field: "itemId", message: "Item not found in inventory" }],
+      errors: [{ field: "inventoryId", message: "Inventory not found" }],
     });
   }
 
@@ -75,18 +76,22 @@ export const equipItem = async (req: AuthenticatedRequest, res: Response) => {
 
   try {
     await prisma.$transaction([
-      prisma.playerInventory.delete({
-        where: { id: inventoryItem.id },
-      }),
+      inventoryItem.quantity === 1
+        ? prisma.playerInventory.delete({
+          where: { id: inventoryItem.id },
+        })
+        : prisma.playerInventory.update({
+          where: { id: inventoryItem.id },
+          data: { quantity: { decrement: 1 } },
+        }),
       prisma.player.update({
         where: { id: player.id },
         data: {
-            attackPower: player.attackPower + item.attackPower,
-            defensePower: player.defensePower + item.defensePower,
-          },
-        }),
+          attackPower: player.attackPower + item.attackPower,
+          defensePower: player.defensePower + item.defensePower,
+        },
+      }),
     ]);
-
   } catch (err) {
     console.error(err);
     return res.status(500).json({
