@@ -51,49 +51,79 @@ export const equipItem = async (req: AuthenticatedRequest, res: Response) => {
   const player = req.player!;
   const { inventoryId } = req.body;
 
-
-  let inventoryItem
+  let inventoryItem;
   try {
     inventoryItem = await prisma.playerInventory.findUnique({
       where: { id: inventoryId },
       include: { item: true },
     });
-  } catch(err) {
+  } catch (err) {
     return res.status(500).json({
       success: false,
       errors: [{ field: null, message: "Something went wrong while checking inventory" }],
     });
   }
 
-  if (!inventoryItem || inventoryItem.playerId !== player.id ||inventoryItem.quantity < 1) {
+  if (!inventoryItem || inventoryItem.playerId !== player.id || inventoryItem.quantity < 1) {
     return res.status(404).json({
       success: false,
-      errors: [{ field: "inventoryId", message: "Inventory not found" }],
+      errors: [{ field: "inventoryId", message: "Item not found in inventory" }],
     });
   }
 
   const item = inventoryItem.item;
 
+  let newAttack = player.attackPower;
+  let newDefense = player.defensePower;
+
   try {
-    await prisma.$transaction([
-      inventoryItem.quantity === 1
-        ? prisma.playerInventory.delete({
-          where: { id: inventoryItem.id },
-        })
-        : prisma.playerInventory.update({
+    await prisma.$transaction(async (tx) => {
+      const existingEquip = await tx.equippedItem.findUnique({
+        where: {
+          playerId_slot: {
+            playerId: player.id,
+            slot: item.type,
+          },
+        },
+        include: { item: true },
+      });
+
+      if (existingEquip) {
+        newAttack -= existingEquip.item.attackPower;
+        newDefense -= existingEquip.item.defensePower;
+
+        await tx.equippedItem.delete({ where: { id: existingEquip.id } });
+      }
+
+      newAttack += item.attackPower;
+      newDefense += item.defensePower;
+
+      await tx.equippedItem.create({
+        data: {
+          playerId: player.id,
+          itemId: item.id,
+          slot: item.type,
+        },
+      });
+
+      if (inventoryItem.quantity === 1) {
+        await tx.playerInventory.delete({ where: { id: inventoryItem.id } });
+      } else {
+        await tx.playerInventory.update({
           where: { id: inventoryItem.id },
           data: { quantity: { decrement: 1 } },
-        }),
-      prisma.player.update({
+        });
+      }
+
+      await tx.player.update({
         where: { id: player.id },
         data: {
-          attackPower: player.attackPower + item.attackPower,
-          defensePower: player.defensePower + item.defensePower,
+          attackPower: newAttack,
+          defensePower: newDefense,
         },
-      }),
-    ]);
+      });
+    });
   } catch (err) {
-    console.error(err);
     return res.status(500).json({
       success: false,
       errors: [{ field: null, message: "Failed to equip item" }],
@@ -104,8 +134,8 @@ export const equipItem = async (req: AuthenticatedRequest, res: Response) => {
     success: true,
     message: `Equipped ${item.name} successfully!`,
     data: {
-      attackPower: player.attackPower + item.attackPower,
-      defensePower: player.defensePower + item.defensePower,
+      attackPower: newAttack,
+      defensePower: newDefense,
     },
   });
 };
