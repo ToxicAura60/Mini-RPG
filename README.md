@@ -82,3 +82,7 @@ Here’s an example with a multiplier of 2:
 
 So basically: the more of the same type you already have, the more expensive the next ones become, and the multiplier controls how quickly the price rises.
 
+## Equip item logic
+
+The equip item feature ensures that each player can only have one weapon, one armor, and one accessory equipped at a time. When a new item is equipped, the system automatically unequips any existing item in the same slot and updates the player’s stats accordingly.
+
